@@ -1,0 +1,83 @@
+$line: url('../../../../assets/img/line.gif');
+$cat: url('../../../../assets/img/cat.gif');
+$collapsed: url('../../../../assets/img/collapsed.gif');
+$expanded: url('../../../../assets/img/expanded.gif');
+
+.tree-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      line-height: 20px;
+      margin-top: 1px;
+      position: relative;
+      width: 100%;
+    }
+    background: $line repeat-y;
+  }
+  
+  .tree-menu li {
+    float: left;
+    display: inline;
+  }
+  
+  .tree-menu {
+    li {
+      a {
+        padding-left: 28px;
+      }
+      span {
+        float: left;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 13px;
+        height: 13px;
+        cursor: auto;
+        font-size: 0;
+        background: $collapsed no-repeat 0 0;
+        &.collapsed {
+          background: $collapsed no-repeat 0 0;
+        }
+        &.expanded {
+          background: $expanded no-repeat 0 0;
+        }
+      }
+      ul {
+        margin-left: 28px;
+        background: $line repeat-y;
+      }
+      li {
+        background: $cat no-repeat 0 0;
+      }
+    }
+    &:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    ul {
+      &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+      display: block;
+      min-height: 1%;
+      display: none;
+    }
+    display: block;
+    min-height: 1%;
+  }
